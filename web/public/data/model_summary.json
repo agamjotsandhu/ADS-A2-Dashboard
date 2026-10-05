@@ -1,0 +1,46 @@
+{
+ "train_date_range": [
+  "2012-06-09",
+  "2025-09-04"
+ ],
+ "test_date_range": [
+  "2025-09-04",
+  "2025-09-09"
+ ],
+ "n_train": 10398,
+ "n_test": 1848,
+ "reduced_test": {
+  "rmse": 114.17914252694115,
+  "mae": 59.892549655138154,
+  "mape": 9.138852833588503
+ },
+ "full_model_test": {
+  "rmse": 112.8,
+  "mae": 58.2,
+  "mape": 8.8
+ },
+ "baseline_test": {
+  "rmse": 144.18202663459488,
+  "mae": 76.78424281474092,
+  "mape": 11.931431695552835
+ },
+ "interval_level": 0.9,
+ "test_coverage": 0.9172077922077922,
+ "test_coverage_actual_above_1500": {
+  "coverage": 0.6521739130434783,
+  "n": 23,
+  "median_width": 956.1907316987119
+ },
+ "luxury_threshold": 2500.0,
+ "amenities": [
+  "feat_dishwasher",
+  "feat_furnished",
+  "feat_study",
+  "feat_secure_parking",
+  "feat_built_in_wardrobes",
+  "feat_gym",
+  "feat_balcony___deck",
+  "feat_pets_allowed",
+  "feat_swimming_pool"
+ ]
+}
