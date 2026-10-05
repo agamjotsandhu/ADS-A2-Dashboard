@@ -131,7 +131,8 @@
      "3": 1065.0
     }
    },
-   "arima_suburb": null
+   "arima_suburb": null,
+   "arima_approximate": false
   },
   "TARNEIT": {
    "name": "TARNEIT",
@@ -184,7 +185,8 @@
      "5+": 590.0
     }
    },
-   "arima_suburb": "Tarneit"
+   "arima_suburb": "Tarneit",
+   "arima_approximate": false
   },
   "SOUTHBANK": {
    "name": "SOUTHBANK",
@@ -236,7 +238,8 @@
      "3": 1100.0
     }
    },
-   "arima_suburb": "Southbank"
+   "arima_suburb": "Southbank",
+   "arima_approximate": false
   },
   "TOORAK": {
    "name": "TOORAK",
@@ -291,7 +294,8 @@
      "3": 1800.0
     }
    },
-   "arima_suburb": null
+   "arima_suburb": "Southbank",
+   "arima_approximate": true
   },
   "DOCKLANDS": {
    "name": "DOCKLANDS",
@@ -345,7 +349,8 @@
      "3": 1425.0
     }
    },
-   "arima_suburb": "Docklands"
+   "arima_suburb": "Docklands",
+   "arima_approximate": false
   },
   "ALLANSFORD": {
    "name": "ALLANSFORD",
@@ -391,7 +396,8 @@
     },
     "median_rent_by_bedrooms": {}
    },
-   "arima_suburb": null
+   "arima_suburb": null,
+   "arima_approximate": false
   }
  }
 }

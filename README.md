@@ -33,7 +33,7 @@ npm run dev                                       # http://localhost:5173/rent-f
 ### Tests and checks
 
 ```bash
-cd api && .venv/bin/python -m pytest -q          # 46 tests; leakage rebuild test needs data/rentals_final.parquet
+cd api && .venv/bin/python -m pytest -q          # 50 tests; leakage rebuild test needs data/rentals_final.parquet
 cd web && npm run typecheck && npm run lint && npm test
 cd web && API_URL=http://localhost:8000 npm run smoke   # e2e smoke against a running API
 ```
@@ -79,7 +79,7 @@ The pipeline is anchored to 2025Q3 as "now". To roll it forward by a quarter, up
 - **Lat/lon overlap:** 11.5% of test rows share an exact lat/lon with a training row (re-listings), which may flatter test metrics for both models.
 - **Short test window:** the test set covers 2025-09-04 to 2025-09-09 (1,848 rows), with no rent above $4,000.
 - **Backfilled upstream data:** in the source data you can't tell genuine values from backfilled defaults for `crime_rate`, `median_weekly_income` and `population`.
-- **Suburb crosswalk gaps:** ARIMA areas are DFFH suburb groups, so some listing suburbs won't map, and a component match applies the group's growth to every member suburb.
+- **Suburb crosswalk gaps:** ARIMA areas are DFFH suburb groups. 28% of listings are in suburbs with no forecast area, a component match applies the group's growth to every member suburb, and approximate matches borrow a neighbouring area's growth.
 - **Combined projection band:** it multiplies the property interval by the suburb forecast interval. It is a heuristic, not a joint prediction interval.
 - **Unseen suburbs:** they fall back to Victoria-wide medians. Coverage was poor on the 18 such test rows.
 - **Rate limiting is in memory and per process.** Use a shared store if the API is scaled to several instances.
@@ -94,8 +94,8 @@ The pipeline is anchored to 2025Q3 as "now". To roll it forward by a quarter, up
 
 ## Decisions and deviations from the brief
 
-- **No ARIMA input data.** `rent_by_qtr_suburb_refactored.csv` wasn't available, so the R export was built and smoke-tested on a synthetic CSV with the same layout (with the Docklands NA pattern), but it has not been run on real data. Until it is, the suburb section shows a "not published yet" state, every listing suburb is unmatched in the crosswalk, and projections are disabled with a warning. The synthetic output exists only as a clearly labelled test fixture.
-- **Crosswalk review threshold (Phase 3) not evaluated** for the same reason. The matching rules are unit-tested.
+- **ARIMA forecasts:** generated from `rent_by_qtr_suburb_refactored.csv` (146 areas, 2000Q1–2025Q3; the raw CSV is git-ignored under `data/`). All 146 areas exported with no failures. Results agree with the original qmd run: Albert Park-Middle Park-West St Kilda is ARIMA(5,1,7) at about $724 in Sep 2031, Keilor has the highest 5-year growth and Southbank the lowest. The ADF tests are simulated, so a suburb whose p-value sits near 0.05 could get a different differencing order on another machine or core count.
+- **Crosswalk (Phase 3 review threshold exceeded):** 249 of 626 listing suburbs match a forecast area. They cover 72% of training listings: 205 by name and 43 approximate (`base_name` rule, e.g. Caulfield North→Caulfield) plus 1 manual override (`ml/crosswalk/overrides.csv`: Melbourne→CBD-St Kilda Rd). The remaining 377 suburbs, mostly growth-corridor suburbs such as Tarneit, Truganina and Point Cook, have no forecast area with a sensible name. Approximate matches are flagged in the API (`arima_approximate`, warning `approximate_forecast_area`) and on the pages. A proper fix needs DFFH's suburb-to-area concordance. To add a reviewed mapping, add a row to `overrides.csv` and re-run the crosswalk and profiles.
 - **qmd bug fixed in the copy:** `fit_suburb_future` used `next` inside a function (an R error when no model passes Ljung-Box). The export returns `NULL` and lists the failure under `meta.failed_suburbs`.
 - **Interval formula:** `point * exp(q)` as specified, with residuals on the log1p scale. Band-dependent quantiles (below $800 / $800 to $1,500 / $1,500 and up) are served because, on out-of-fold training predictions, the global interval covered only 46% of rows predicted at $1,500 or more. That decision rule was fixed in code before test evaluation.
 - **OOF residuals** use fixed `n_estimators` rather than early stopping on the residual rows, so the calibration errors aren't optimistically biased.

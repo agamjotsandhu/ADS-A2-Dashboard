@@ -17,7 +17,9 @@ def client(tmp_path_factory):
         shutil.copy(ARTIFACTS / f, art / f)
     lookup = json.loads((ARTIFACTS / "suburb_lookup.json").read_text())
     index = json.loads((FIXTURES / "synthetic_suburb_index.json").read_text())
-    cw = build([k for k in lookup if not k.startswith("__")], index)
+    # SOUTH YARRA is forced onto a neighbouring area to exercise the approximate-match path.
+    cw = build([k for k in lookup if not k.startswith("__")], index,
+               {"SOUTH YARRA": {"arima": "Southbank", "note": "test"}})
     cw.pop("_review")
     (art / "suburb_crosswalk.json").write_text(json.dumps(cw))
     settings = Settings(artifacts_dir=art, forecasts_path=FIXTURES / "synthetic_suburb_forecasts.json",
@@ -65,6 +67,17 @@ def test_predict_with_projection(client):
     assert b["at_target"] == proj[-1]
     assert all(p["lower"] < p["point"] < p["upper"] for p in proj)
     assert any(w["code"] == "combined_band" for w in b["warnings"])
+
+
+def test_approximate_forecast_area(client):
+    b = client.post("/predict", json={**BASE, "suburb": "South Yarra", "target_date": "2026Q4"}).json()
+    assert b["suburb"]["arima_suburb"] == "Southbank" and b["suburb"]["arima_approximate"] is True
+    assert "approximate_forecast_area" in [w["code"] for w in b["warnings"]]
+    exact = client.post("/predict", json={**BASE, "target_date": "2026Q4"}).json()
+    assert exact["suburb"]["arima_approximate"] is False
+    assert "approximate_forecast_area" not in [w["code"] for w in exact["warnings"]]
+    subs = {s["name"]: s for s in client.get("/suburbs").json()["suburbs"]}
+    assert subs["SOUTH YARRA"]["arima_approximate"] is True and subs["TARNEIT"]["arima_approximate"] is False
 
 
 def test_no_forecast_warning(client):

@@ -107,7 +107,11 @@ export function PropertyEstimator({ fetchSuburbs = defaultFetchSuburbs, predict 
             <div className="wide" style={{ maxWidth: 420 }}>
               <SuburbPicker label="Suburb" options={suburbOptions} value={form.suburb} onChange={pickSuburb} required
                 hint={selected
-                  ? `${selected.n_listings} training listings. ${selected.has_forecast ? "Suburb forecast available." : "No suburb forecast: estimate at Sep 2025 level only."}`
+                  ? `${selected.n_listings} training listings. ${selected.has_forecast
+                    ? selected.arima_approximate
+                      ? `Projection uses the nearby ${selected.arima_suburb} area's forecast.`
+                      : "Suburb forecast available."
+                    : "No suburb forecast: estimate at Sep 2025 level only."}`
                   : "Suburbs seen in the listings data."} />
             </div>
             <div className="field">

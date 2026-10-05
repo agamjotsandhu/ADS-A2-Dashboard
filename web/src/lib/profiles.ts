@@ -17,6 +17,8 @@ export interface SuburbProfile {
     median_rent_by_bedrooms: Record<string, number>;
   };
   arima_suburb: string | null;
+  /** True when the forecast area is a neighbouring area, not this suburb's own. */
+  arima_approximate?: boolean;
 }
 
 export interface ProfilesFile {

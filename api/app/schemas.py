@@ -47,6 +47,7 @@ class SuburbMatch(BaseModel):
     listing_suburb: Optional[str]
     seen_in_training: bool
     arima_suburb: Optional[str]
+    arima_approximate: bool = False
 
 
 class PredictResponse(BaseModel):

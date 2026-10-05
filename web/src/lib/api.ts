@@ -6,6 +6,7 @@ export interface SuburbOption {
   n_listings: number;
   defaults: { property_type: string; bedrooms: number; bathrooms: number; carspaces: number };
   arima_suburb: string | null;
+  arima_approximate?: boolean;
   has_forecast: boolean;
 }
 
@@ -42,7 +43,13 @@ export interface PredictResponse {
   upper: number;
   interval_level: number;
   price_level: string;
-  suburb: { input: string; listing_suburb: string | null; seen_in_training: boolean; arima_suburb: string | null };
+  suburb: {
+    input: string;
+    listing_suburb: string | null;
+    seen_in_training: boolean;
+    arima_suburb: string | null;
+    arima_approximate?: boolean;
+  };
   target_date: string | null;
   at_target: ProjectionPoint | null;
   projection: ProjectionPoint[] | null;

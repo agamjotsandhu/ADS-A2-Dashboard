@@ -28,7 +28,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "ml" / "crosswalk"))
-from build_crosswalk import build as build_crosswalk  # noqa: E402
+from build_crosswalk import build as build_crosswalk, load_overrides  # noqa: E402
 
 MIN_LISTINGS_AFFORD = 5
 
@@ -70,7 +70,7 @@ def percentile_score(s: pd.Series, higher_is_better: bool) -> pd.Series:
     return (r - r.min()) / (r.max() - r.min()) * 100 if r.max() > r.min() else r * 0 + 50
 
 
-def build_profiles(df: pd.DataFrame, arima_names: list[str]) -> dict:
+def build_profiles(df: pd.DataFrame, arima_names: list[str], overrides: dict | None = None) -> dict:
     df = df.copy()
     df["suburb"] = df["suburb"].str.strip().str.upper()
     df["dwelling"] = df["property_type"].map(dwelling_group)
@@ -93,7 +93,7 @@ def build_profiles(df: pd.DataFrame, arima_names: list[str]) -> dict:
     eligible = med["n"] >= MIN_LISTINGS_AFFORD
     aff_rank = ratio[eligible].rank(ascending=True, method="min").astype(int)
 
-    cw = build_crosswalk(list(med.index), arima_names) if arima_names else {"listing_to_arima": {}}
+    cw = build_crosswalk(list(med.index), arima_names, overrides) if arima_names else {"listing_to_arima": {}}
 
     suburbs = {}
     for sub, row in med.iterrows():
@@ -128,6 +128,7 @@ def build_profiles(df: pd.DataFrame, arima_names: list[str]) -> dict:
                 },
             },
             "arima_suburb": m["arima"] if m else None,
+            "arima_approximate": bool(m and m["approximate"]),
         }
 
     dates = pd.to_datetime(df["date_listed"])
@@ -156,7 +157,8 @@ def main():
 
     idx = Path(args.arima_index)
     arima = json.loads(idx.read_text()) if idx.exists() else []
-    out = build_profiles(pd.read_parquet(args.data), arima)
+    out = build_profiles(pd.read_parquet(args.data), arima,
+                         load_overrides(ROOT / "ml" / "crosswalk" / "overrides.csv", arima))
     Path(args.out).write_text(json.dumps(out, separators=(",", ":")))
     m = out["meta"]
     print(f"{m['n_suburbs']} suburbs | affordability ranked {m['n_affordability_ranked']} "

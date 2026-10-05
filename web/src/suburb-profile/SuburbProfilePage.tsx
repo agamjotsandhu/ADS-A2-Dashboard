@@ -134,7 +134,11 @@ function Profile({ p, meta, forecasts }: { p: SuburbProfile; meta: ProfilesFile[
           <div className="stat">
             <span className="label">Forecast growth rank</span>
             <span className="value">{gr ? `#${gr.rank}` : "n/a"}</span>
-            <span className="note">{gr ? `of ${gr.of} areas; ${fmtPct(gr.growth)} Sep 2026 to Sep 2031` : "No suburb forecast available"}</span>
+            <span className="note">
+              {gr
+                ? `of ${gr.of} areas; ${fmtPct(gr.growth)} Sep 2026 to Sep 2031${p.arima_approximate ? ` (nearby ${p.arima_suburb} area)` : ""}`
+                : "No suburb forecast available"}
+            </span>
           </div>
         </div>
         <p className="subtle small">Rank 1 is the most affordable, most livable or fastest forecast growth.</p>
@@ -144,6 +148,12 @@ function Profile({ p, meta, forecasts }: { p: SuburbProfile; meta: ProfilesFile[
         <h2 id="fc-h">Rent forecast, 2026 to 2031</h2>
         {fc ? (
           <>
+            {p.arima_approximate && (
+              <div className="notice" role="note">
+                <strong>Nearby area.</strong>There is no forecast for {p.display} itself, so this is the forecast for the
+                neighbouring {fc.suburb} area, matched by name. Rents in {p.display} may move differently.
+              </div>
+            )}
             <p className="subtle">
               Median weekly rent forecast for the {fc.suburb} area ({fc.model}), with a 95% prediction interval.
               Sep 2026: {fmtDollars(forecastAt(fc, 4))} · Sep 2031: {fmtDollars(forecastAt(fc, 24))}.
@@ -223,7 +233,9 @@ function Method({ meta }: { meta: ProfilesFile["meta"] }) {
         </li>
         <li>
           <strong>Forecast growth</strong> is the suburb area's ARIMA forecast for Sep 2031 over Sep 2026, ranked against every area
-          with a forecast. Listing suburbs are matched to forecast areas by name; some forecast areas group several suburbs.
+          with a forecast. Listing suburbs are matched to forecast areas by name; some forecast areas group several suburbs. A
+          suburb with no matching area name (e.g. Caulfield North) borrows the closest-named area (Caulfield), and the page
+          flags it as a nearby area. Suburbs with no sensible match show no forecast.
         </li>
         <li>
           Listings data: {meta.n_listings.toLocaleString()} rental listings from {meta.listing_dates[0]} to {meta.listing_dates[1]}, mostly Jul

@@ -1,14 +1,1806 @@
 {
- "listing_to_arima": {},
- "arima_to_listing": {},
+ "listing_to_arima": {
+  "ABBOTSFORD": {
+   "arima": "Collingwood-Abbotsford",
+   "rule": "component",
+   "approximate": false
+  },
+  "ALBERT PARK": {
+   "arima": "Albert Park-Middle Park-West St Kilda",
+   "rule": "component",
+   "approximate": false
+  },
+  "ALFREDTON": {
+   "arima": "Wendouree-Alfredton",
+   "rule": "component",
+   "approximate": false
+  },
+  "ALPHINGTON": {
+   "arima": "Fairfield-Alphington",
+   "rule": "component",
+   "approximate": false
+  },
+  "ALTONA": {
+   "arima": "Altona",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ALTONA MEADOWS": {
+   "arima": "Altona",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "ALTONA NORTH": {
+   "arima": "Altona",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "ARMADALE": {
+   "arima": "Armadale",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ASCOT VALE": {
+   "arima": "Moonee Ponds-Ascot Vale",
+   "rule": "component",
+   "approximate": false
+  },
+  "ASHBURTON": {
+   "arima": "Burwood-Ashburton",
+   "rule": "component",
+   "approximate": false
+  },
+  "ASPENDALE": {
+   "arima": "Aspendale-Chelsea-Carrum",
+   "rule": "component",
+   "approximate": false
+  },
+  "AVONDALE HEIGHTS": {
+   "arima": "Keilor East-Avondale Heights",
+   "rule": "component",
+   "approximate": false
+  },
+  "BAIRNSDALE": {
+   "arima": "Bairnsdale",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BALLARAT NORTH": {
+   "arima": "Ballarat",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BALWYN": {
+   "arima": "Balwyn",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BALWYN NORTH": {
+   "arima": "Balwyn",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BARWON HEADS": {
+   "arima": "Ocean Grove-Barwon Heads",
+   "rule": "component",
+   "approximate": false
+  },
+  "BAYSWATER": {
+   "arima": "Bayswater",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BAYSWATER NORTH": {
+   "arima": "Bayswater",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BEAUMARIS": {
+   "arima": "Hampton-Beaumaris",
+   "rule": "component",
+   "approximate": false
+  },
+  "BELMONT": {
+   "arima": "Belmont-Grovedale",
+   "rule": "component",
+   "approximate": false
+  },
+  "BENALLA": {
+   "arima": "Benalla",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BENDIGO": {
+   "arima": "Bendigo",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BENTLEIGH": {
+   "arima": "Bentleigh",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BENTLEIGH EAST": {
+   "arima": "Bentleigh",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BERWICK": {
+   "arima": "Berwick",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BLACKBURN": {
+   "arima": "Blackburn",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BLACKBURN NORTH": {
+   "arima": "Blackburn",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BLACKBURN SOUTH": {
+   "arima": "Blackburn",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BORONIA": {
+   "arima": "Boronia",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BOX HILL": {
+   "arima": "Box Hill",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BOX HILL NORTH": {
+   "arima": "Box Hill",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BOX HILL SOUTH": {
+   "arima": "Box Hill",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "BRIGHTON": {
+   "arima": "Brighton",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BRIGHTON EAST": {
+   "arima": "Brighton East",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BROADMEADOWS": {
+   "arima": "Broadmeadows-Roxburgh Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "BRUNSWICK": {
+   "arima": "Brunswick",
+   "rule": "exact",
+   "approximate": false
+  },
+  "BRUNSWICK EAST": {
+   "arima": "East Brunswick",
+   "rule": "word_order",
+   "approximate": false
+  },
+  "BRUNSWICK WEST": {
+   "arima": "West Brunswick",
+   "rule": "word_order",
+   "approximate": false
+  },
+  "BULLEEN": {
+   "arima": "Bulleen-Templestowe-Doncaster",
+   "rule": "component",
+   "approximate": false
+  },
+  "BUNDOORA": {
+   "arima": "Bundoora-Greensborough-Hurstbridge",
+   "rule": "component",
+   "approximate": false
+  },
+  "BUNINYONG": {
+   "arima": "Mount Clear-Buninyong",
+   "rule": "component",
+   "approximate": false
+  },
+  "BURNLEY": {
+   "arima": "Richmond-Burnley",
+   "rule": "component",
+   "approximate": false
+  },
+  "BURWOOD": {
+   "arima": "Burwood-Ashburton",
+   "rule": "component",
+   "approximate": false
+  },
+  "BURWOOD EAST": {
+   "arima": "Vermont-Forest Hill-Burwood East",
+   "rule": "component",
+   "approximate": false
+  },
+  "CAMBERWELL": {
+   "arima": "Camberwell-Glen Iris",
+   "rule": "component",
+   "approximate": false
+  },
+  "CANTERBURY": {
+   "arima": "Canterbury-Surrey Hills-Mont Albert",
+   "rule": "component",
+   "approximate": false
+  },
+  "CARLTON": {
+   "arima": "Carlton-Parkville",
+   "rule": "component",
+   "approximate": false
+  },
+  "CARLTON NORTH": {
+   "arima": "Carlton North",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CARNEGIE": {
+   "arima": "Carnegie",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CARRUM": {
+   "arima": "Aspendale-Chelsea-Carrum",
+   "rule": "component",
+   "approximate": false
+  },
+  "CARRUM DOWNS": {
+   "arima": "Seaford-Carrum Downs",
+   "rule": "component",
+   "approximate": false
+  },
+  "CASTLEMAINE": {
+   "arima": "Castlemaine",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CAULFIELD": {
+   "arima": "Caulfield",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CAULFIELD EAST": {
+   "arima": "Caulfield",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CAULFIELD NORTH": {
+   "arima": "Caulfield",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CAULFIELD SOUTH": {
+   "arima": "Caulfield",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CHADSTONE": {
+   "arima": "Chadstone-Oakleigh",
+   "rule": "component",
+   "approximate": false
+  },
+  "CHELSEA": {
+   "arima": "Aspendale-Chelsea-Carrum",
+   "rule": "component",
+   "approximate": false
+  },
+  "CHELSEA HEIGHTS": {
+   "arima": "Aspendale-Chelsea-Carrum",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CHELTENHAM": {
+   "arima": "Cheltenham",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CLAYTON": {
+   "arima": "Clayton",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CLAYTON SOUTH": {
+   "arima": "Clayton",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CLIFTON HILL": {
+   "arima": "Fitzroy North-Clifton Hill",
+   "rule": "component",
+   "approximate": false
+  },
+  "COBURG": {
+   "arima": "Coburg-Pascoe Vale South",
+   "rule": "component",
+   "approximate": false
+  },
+  "COBURG NORTH": {
+   "arima": "Pascoe Vale-Coburg North",
+   "rule": "component",
+   "approximate": false
+  },
+  "COLLINGWOOD": {
+   "arima": "Collingwood-Abbotsford",
+   "rule": "component",
+   "approximate": false
+  },
+  "CORIO": {
+   "arima": "Corio",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CRAIGIEBURN": {
+   "arima": "Craigieburn",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CRANBOURNE": {
+   "arima": "Cranbourne",
+   "rule": "exact",
+   "approximate": false
+  },
+  "CRANBOURNE NORTH": {
+   "arima": "Cranbourne",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CRANBOURNE SOUTH": {
+   "arima": "Cranbourne",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CROYDON": {
+   "arima": "Croydon-Lilydale",
+   "rule": "component",
+   "approximate": false
+  },
+  "CROYDON NORTH": {
+   "arima": "Croydon-Lilydale",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "CROYDON SOUTH": {
+   "arima": "Croydon-Lilydale",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "DANDENONG": {
+   "arima": "Dandenong",
+   "rule": "exact",
+   "approximate": false
+  },
+  "DANDENONG SOUTH": {
+   "arima": "Dandenong",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "DEER PARK": {
+   "arima": "St Albans-Deer Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "DELACOMBE": {
+   "arima": "Sebastopol-Delacombe",
+   "rule": "component",
+   "approximate": false
+  },
+  "DOCKLANDS": {
+   "arima": "Docklands",
+   "rule": "exact",
+   "approximate": false
+  },
+  "DONCASTER": {
+   "arima": "Bulleen-Templestowe-Doncaster",
+   "rule": "component",
+   "approximate": false
+  },
+  "DONCASTER EAST": {
+   "arima": "Doncaster East-Donvale",
+   "rule": "component",
+   "approximate": false
+  },
+  "DONVALE": {
+   "arima": "Doncaster East-Donvale",
+   "rule": "component",
+   "approximate": false
+  },
+  "DROMANA": {
+   "arima": "Dromana-Portsea",
+   "rule": "component",
+   "approximate": false
+  },
+  "EAST GEELONG": {
+   "arima": "Geelong-Newcombe",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "EAST MELBOURNE": {
+   "arima": "East Melbourne",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ECHUCA": {
+   "arima": "Echuca",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ELSTERNWICK": {
+   "arima": "Elsternwick",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ELTHAM": {
+   "arima": "Eltham-Research-Montmorency",
+   "rule": "component",
+   "approximate": false
+  },
+  "ELWOOD": {
+   "arima": "Elwood",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ENDEAVOUR HILLS": {
+   "arima": "Dandenong North-Endeavour Hills",
+   "rule": "component",
+   "approximate": false
+  },
+  "EPPING": {
+   "arima": "Mill Park-Epping",
+   "rule": "component",
+   "approximate": false
+  },
+  "ESSENDON": {
+   "arima": "Essendon",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ESSENDON NORTH": {
+   "arima": "Essendon",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "ESSENDON WEST": {
+   "arima": "Essendon",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "FAIRFIELD": {
+   "arima": "Fairfield-Alphington",
+   "rule": "component",
+   "approximate": false
+  },
+  "FAWKNER": {
+   "arima": "Oak Park-Glenroy-Fawkner",
+   "rule": "component",
+   "approximate": false
+  },
+  "FERNTREE GULLY": {
+   "arima": "Ferntree Gully",
+   "rule": "exact",
+   "approximate": false
+  },
+  "FITZROY": {
+   "arima": "Fitzroy",
+   "rule": "exact",
+   "approximate": false
+  },
+  "FITZROY NORTH": {
+   "arima": "Fitzroy North-Clifton Hill",
+   "rule": "component",
+   "approximate": false
+  },
+  "FLEMINGTON": {
+   "arima": "Flemington-Kensington",
+   "rule": "component",
+   "approximate": false
+  },
+  "FLINDERS": {
+   "arima": "Hastings-Flinders",
+   "rule": "component",
+   "approximate": false
+  },
+  "FOOTSCRAY": {
+   "arima": "Footscray",
+   "rule": "exact",
+   "approximate": false
+  },
+  "FOREST HILL": {
+   "arima": "Vermont-Forest Hill-Burwood East",
+   "rule": "component",
+   "approximate": false
+  },
+  "FRANKSTON": {
+   "arima": "Frankston",
+   "rule": "exact",
+   "approximate": false
+  },
+  "FRANKSTON NORTH": {
+   "arima": "Frankston",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "GEELONG": {
+   "arima": "Geelong-Newcombe",
+   "rule": "component",
+   "approximate": false
+  },
+  "GEELONG WEST": {
+   "arima": "Herne Hill-Geelong West",
+   "rule": "component",
+   "approximate": false
+  },
+  "GLADSTONE PARK": {
+   "arima": "Gladstone Park-Tullamarine",
+   "rule": "component",
+   "approximate": false
+  },
+  "GLEN IRIS": {
+   "arima": "Camberwell-Glen Iris",
+   "rule": "component",
+   "approximate": false
+  },
+  "GLEN WAVERLEY": {
+   "arima": "Glen Waverley-Mulgrave",
+   "rule": "component",
+   "approximate": false
+  },
+  "GLENROY": {
+   "arima": "Oak Park-Glenroy-Fawkner",
+   "rule": "component",
+   "approximate": false
+  },
+  "GOLDEN SQUARE": {
+   "arima": "Golden Square-Kangaroo Flat",
+   "rule": "component",
+   "approximate": false
+  },
+  "GREENSBOROUGH": {
+   "arima": "Bundoora-Greensborough-Hurstbridge",
+   "rule": "component",
+   "approximate": false
+  },
+  "GROVEDALE": {
+   "arima": "Belmont-Grovedale",
+   "rule": "component",
+   "approximate": false
+  },
+  "HAMILTON": {
+   "arima": "Hamilton",
+   "rule": "exact",
+   "approximate": false
+  },
+  "HAMPTON": {
+   "arima": "Hampton-Beaumaris",
+   "rule": "component",
+   "approximate": false
+  },
+  "HAMPTON EAST": {
+   "arima": "Hampton-Beaumaris",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "HAMPTON PARK": {
+   "arima": "Narre Warren-Hampton Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "HASTINGS": {
+   "arima": "Hastings-Flinders",
+   "rule": "component",
+   "approximate": false
+  },
+  "HAWTHORN": {
+   "arima": "Hawthorn",
+   "rule": "exact",
+   "approximate": false
+  },
+  "HAWTHORN EAST": {
+   "arima": "East Hawthorn",
+   "rule": "word_order",
+   "approximate": false
+  },
+  "HEIDELBERG": {
+   "arima": "Heidelberg-Heidelberg West",
+   "rule": "component",
+   "approximate": false
+  },
+  "HEIDELBERG HEIGHTS": {
+   "arima": "Heidelberg-Heidelberg West",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "HEIDELBERG WEST": {
+   "arima": "Heidelberg-Heidelberg West",
+   "rule": "component",
+   "approximate": false
+  },
+  "HERNE HILL": {
+   "arima": "Herne Hill-Geelong West",
+   "rule": "component",
+   "approximate": false
+  },
+  "HOPPERS CROSSING": {
+   "arima": "Werribee-Hoppers Crossing",
+   "rule": "component",
+   "approximate": false
+  },
+  "HORSHAM": {
+   "arima": "Horsham",
+   "rule": "exact",
+   "approximate": false
+  },
+  "HUGHESDALE": {
+   "arima": "Murrumbeena-Hughesdale",
+   "rule": "component",
+   "approximate": false
+  },
+  "HURSTBRIDGE": {
+   "arima": "Bundoora-Greensborough-Hurstbridge",
+   "rule": "component",
+   "approximate": false
+  },
+  "IVANHOE": {
+   "arima": "Ivanhoe-Ivanhoe East",
+   "rule": "component",
+   "approximate": false
+  },
+  "IVANHOE EAST": {
+   "arima": "Ivanhoe-Ivanhoe East",
+   "rule": "component",
+   "approximate": false
+  },
+  "KANGAROO FLAT": {
+   "arima": "Golden Square-Kangaroo Flat",
+   "rule": "component",
+   "approximate": false
+  },
+  "KEILOR": {
+   "arima": "Keilor",
+   "rule": "exact",
+   "approximate": false
+  },
+  "KEILOR EAST": {
+   "arima": "Keilor East-Avondale Heights",
+   "rule": "component",
+   "approximate": false
+  },
+  "KENSINGTON": {
+   "arima": "Flemington-Kensington",
+   "rule": "component",
+   "approximate": false
+  },
+  "KEW": {
+   "arima": "Kew",
+   "rule": "exact",
+   "approximate": false
+  },
+  "KEW EAST": {
+   "arima": "Kew",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "LALOR": {
+   "arima": "Thomastown-Lalor",
+   "rule": "component",
+   "approximate": false
+  },
+  "LARA": {
+   "arima": "Lara",
+   "rule": "exact",
+   "approximate": false
+  },
+  "LILYDALE": {
+   "arima": "Croydon-Lilydale",
+   "rule": "component",
+   "approximate": false
+  },
+  "MAFFRA": {
+   "arima": "Sale-Maffra",
+   "rule": "component",
+   "approximate": false
+  },
+  "MALVERN": {
+   "arima": "Malvern",
+   "rule": "exact",
+   "approximate": false
+  },
+  "MALVERN EAST": {
+   "arima": "Malvern East",
+   "rule": "exact",
+   "approximate": false
+  },
+  "MELBOURNE": {
+   "arima": "CBD-St Kilda Rd",
+   "rule": "override",
+   "approximate": true
+  },
+  "MELTON": {
+   "arima": "Melton",
+   "rule": "exact",
+   "approximate": false
+  },
+  "MELTON SOUTH": {
+   "arima": "Melton",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "MENTONE": {
+   "arima": "Mentone-Parkdale-Mordialloc",
+   "rule": "component",
+   "approximate": false
+  },
+  "MIDDLE PARK": {
+   "arima": "Albert Park-Middle Park-West St Kilda",
+   "rule": "component",
+   "approximate": false
+  },
+  "MILL PARK": {
+   "arima": "Mill Park-Epping",
+   "rule": "component",
+   "approximate": false
+  },
+  "MITCHAM": {
+   "arima": "Nunawading-Mitcham",
+   "rule": "component",
+   "approximate": false
+  },
+  "MOE": {
+   "arima": "Moe-Newborough",
+   "rule": "component",
+   "approximate": false
+  },
+  "MONT ALBERT": {
+   "arima": "Canterbury-Surrey Hills-Mont Albert",
+   "rule": "component",
+   "approximate": false
+  },
+  "MONT ALBERT NORTH": {
+   "arima": "Canterbury-Surrey Hills-Mont Albert",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "MONTMORENCY": {
+   "arima": "Eltham-Research-Montmorency",
+   "rule": "component",
+   "approximate": false
+  },
+  "MOONEE PONDS": {
+   "arima": "Moonee Ponds-Ascot Vale",
+   "rule": "component",
+   "approximate": false
+  },
+  "MORDIALLOC": {
+   "arima": "Mentone-Parkdale-Mordialloc",
+   "rule": "component",
+   "approximate": false
+  },
+  "MORNINGTON": {
+   "arima": "Mt Eliza-Mornington-Mt Martha",
+   "rule": "component",
+   "approximate": false
+  },
+  "MORWELL": {
+   "arima": "Morwell",
+   "rule": "exact",
+   "approximate": false
+  },
+  "MOUNT CLEAR": {
+   "arima": "Mount Clear-Buninyong",
+   "rule": "component",
+   "approximate": false
+  },
+  "MOUNT ELIZA": {
+   "arima": "Mt Eliza-Mornington-Mt Martha",
+   "rule": "component",
+   "approximate": false
+  },
+  "MOUNT MARTHA": {
+   "arima": "Mt Eliza-Mornington-Mt Martha",
+   "rule": "component",
+   "approximate": false
+  },
+  "MOUNT WAVERLEY": {
+   "arima": "Mount Waverley",
+   "rule": "exact",
+   "approximate": false
+  },
+  "MULGRAVE": {
+   "arima": "Glen Waverley-Mulgrave",
+   "rule": "component",
+   "approximate": false
+  },
+  "MURRUMBEENA": {
+   "arima": "Murrumbeena-Hughesdale",
+   "rule": "component",
+   "approximate": false
+  },
+  "NARRE WARREN": {
+   "arima": "Narre Warren-Hampton Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "NARRE WARREN NORTH": {
+   "arima": "Narre Warren-Hampton Park",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "NEWBOROUGH": {
+   "arima": "Moe-Newborough",
+   "rule": "component",
+   "approximate": false
+  },
+  "NEWCOMB": {
+   "arima": "Geelong-Newcombe",
+   "rule": "fuzzy(0.93)",
+   "approximate": false
+  },
+  "NEWPORT": {
+   "arima": "Newport-Spotswood",
+   "rule": "component",
+   "approximate": false
+  },
+  "NEWTOWN": {
+   "arima": "Newtown",
+   "rule": "exact",
+   "approximate": false
+  },
+  "NOBLE PARK": {
+   "arima": "Noble Park",
+   "rule": "exact",
+   "approximate": false
+  },
+  "NOBLE PARK NORTH": {
+   "arima": "Noble Park",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "NORTH BENDIGO": {
+   "arima": "North Bendigo",
+   "rule": "exact",
+   "approximate": false
+  },
+  "NORTH GEELONG": {
+   "arima": "North Geelong",
+   "rule": "exact",
+   "approximate": false
+  },
+  "NORTH MELBOURNE": {
+   "arima": "North Melbourne-West Melbourne",
+   "rule": "component",
+   "approximate": false
+  },
+  "NORTHCOTE": {
+   "arima": "Northcote",
+   "rule": "exact",
+   "approximate": false
+  },
+  "NUNAWADING": {
+   "arima": "Nunawading-Mitcham",
+   "rule": "component",
+   "approximate": false
+  },
+  "OAK PARK": {
+   "arima": "Oak Park-Glenroy-Fawkner",
+   "rule": "component",
+   "approximate": false
+  },
+  "OAKLEIGH": {
+   "arima": "Chadstone-Oakleigh",
+   "rule": "component",
+   "approximate": false
+  },
+  "OAKLEIGH EAST": {
+   "arima": "Chadstone-Oakleigh",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "OAKLEIGH SOUTH": {
+   "arima": "Chadstone-Oakleigh",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "OCEAN GROVE": {
+   "arima": "Ocean Grove-Barwon Heads",
+   "rule": "component",
+   "approximate": false
+  },
+  "PAKENHAM": {
+   "arima": "Pakenham",
+   "rule": "exact",
+   "approximate": false
+  },
+  "PAKENHAM UPPER": {
+   "arima": "Pakenham",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "PARKDALE": {
+   "arima": "Mentone-Parkdale-Mordialloc",
+   "rule": "component",
+   "approximate": false
+  },
+  "PARKVILLE": {
+   "arima": "Carlton-Parkville",
+   "rule": "component",
+   "approximate": false
+  },
+  "PASCOE VALE": {
+   "arima": "Pascoe Vale-Coburg North",
+   "rule": "component",
+   "approximate": false
+  },
+  "PASCOE VALE SOUTH": {
+   "arima": "Coburg-Pascoe Vale South",
+   "rule": "component",
+   "approximate": false
+  },
+  "PORT MELBOURNE": {
+   "arima": "Port Melbourne",
+   "rule": "exact",
+   "approximate": false
+  },
+  "PORTLAND": {
+   "arima": "Portland",
+   "rule": "exact",
+   "approximate": false
+  },
+  "PORTSEA": {
+   "arima": "Dromana-Portsea",
+   "rule": "component",
+   "approximate": false
+  },
+  "PRAHRAN": {
+   "arima": "Prahran-Windsor",
+   "rule": "component",
+   "approximate": false
+  },
+  "PRESTON": {
+   "arima": "Preston",
+   "rule": "exact",
+   "approximate": false
+  },
+  "RESERVOIR": {
+   "arima": "Reservoir",
+   "rule": "exact",
+   "approximate": false
+  },
+  "RICHMOND": {
+   "arima": "Richmond-Burnley",
+   "rule": "component",
+   "approximate": false
+  },
+  "RINGWOOD": {
+   "arima": "Ringwood",
+   "rule": "exact",
+   "approximate": false
+  },
+  "RINGWOOD EAST": {
+   "arima": "Ringwood",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "RINGWOOD NORTH": {
+   "arima": "Ringwood",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "ROWVILLE": {
+   "arima": "Rowville",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ROXBURGH PARK": {
+   "arima": "Broadmeadows-Roxburgh Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "SALE": {
+   "arima": "Sale-Maffra",
+   "rule": "component",
+   "approximate": false
+  },
+  "SCORESBY": {
+   "arima": "Wantirna-Scoresby",
+   "rule": "component",
+   "approximate": false
+  },
+  "SEAFORD": {
+   "arima": "Seaford-Carrum Downs",
+   "rule": "component",
+   "approximate": false
+  },
+  "SEBASTOPOL": {
+   "arima": "Sebastopol-Delacombe",
+   "rule": "component",
+   "approximate": false
+  },
+  "SEDDON": {
+   "arima": "Yarraville-Seddon",
+   "rule": "component",
+   "approximate": false
+  },
+  "SEYMOUR": {
+   "arima": "Seymour",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SHEPPARTON": {
+   "arima": "Shepparton",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SHEPPARTON EAST": {
+   "arima": "Shepparton",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "SOUTH MELBOURNE": {
+   "arima": "South Melbourne",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SOUTH YARRA": {
+   "arima": "South Yarra",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SOUTHBANK": {
+   "arima": "Southbank",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SPOTSWOOD": {
+   "arima": "Newport-Spotswood",
+   "rule": "component",
+   "approximate": false
+  },
+  "SPRINGVALE": {
+   "arima": "Springvale",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SPRINGVALE SOUTH": {
+   "arima": "Springvale",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "ST ALBANS": {
+   "arima": "St Albans-Deer Park",
+   "rule": "component",
+   "approximate": false
+  },
+  "ST KILDA": {
+   "arima": "St Kilda",
+   "rule": "exact",
+   "approximate": false
+  },
+  "ST KILDA EAST": {
+   "arima": "East St Kilda",
+   "rule": "word_order",
+   "approximate": false
+  },
+  "ST KILDA WEST": {
+   "arima": "Albert Park-Middle Park-West St Kilda",
+   "rule": "component_word_order",
+   "approximate": false
+  },
+  "SUNBURY": {
+   "arima": "Sunbury",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SUNSHINE": {
+   "arima": "Sunshine",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SURREY HILLS": {
+   "arima": "Canterbury-Surrey Hills-Mont Albert",
+   "rule": "component",
+   "approximate": false
+  },
+  "SWAN HILL": {
+   "arima": "Swan Hill",
+   "rule": "exact",
+   "approximate": false
+  },
+  "SYDENHAM": {
+   "arima": "Sydenham",
+   "rule": "exact",
+   "approximate": false
+  },
+  "TEMPLESTOWE": {
+   "arima": "Bulleen-Templestowe-Doncaster",
+   "rule": "component",
+   "approximate": false
+  },
+  "TEMPLESTOWE LOWER": {
+   "arima": "Bulleen-Templestowe-Doncaster",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "THOMASTOWN": {
+   "arima": "Thomastown-Lalor",
+   "rule": "component",
+   "approximate": false
+  },
+  "THORNBURY": {
+   "arima": "Thornbury",
+   "rule": "exact",
+   "approximate": false
+  },
+  "TOORAK": {
+   "arima": "Toorak",
+   "rule": "exact",
+   "approximate": false
+  },
+  "TORQUAY": {
+   "arima": "Torquay",
+   "rule": "exact",
+   "approximate": false
+  },
+  "TRARALGON": {
+   "arima": "Traralgon",
+   "rule": "exact",
+   "approximate": false
+  },
+  "TULLAMARINE": {
+   "arima": "Gladstone Park-Tullamarine",
+   "rule": "component",
+   "approximate": false
+  },
+  "UPPER FERNTREE GULLY": {
+   "arima": "Ferntree Gully",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "VERMONT": {
+   "arima": "Vermont-Forest Hill-Burwood East",
+   "rule": "component",
+   "approximate": false
+  },
+  "VERMONT SOUTH": {
+   "arima": "Vermont-Forest Hill-Burwood East",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "WANGARATTA": {
+   "arima": "Wanagaratta",
+   "rule": "fuzzy(0.95)",
+   "approximate": false
+  },
+  "WANTIRNA": {
+   "arima": "Wantirna-Scoresby",
+   "rule": "component",
+   "approximate": false
+  },
+  "WANTIRNA SOUTH": {
+   "arima": "Wantirna-Scoresby",
+   "rule": "base_name",
+   "approximate": true
+  },
+  "WARRAGUL": {
+   "arima": "Warragul",
+   "rule": "exact",
+   "approximate": false
+  },
+  "WARRNAMBOOL": {
+   "arima": "Warrnambool",
+   "rule": "exact",
+   "approximate": false
+  },
+  "WENDOUREE": {
+   "arima": "Wendouree-Alfredton",
+   "rule": "component",
+   "approximate": false
+  },
+  "WERRIBEE": {
+   "arima": "Werribee-Hoppers Crossing",
+   "rule": "component",
+   "approximate": false
+  },
+  "WEST FOOTSCRAY": {
+   "arima": "West Footscray",
+   "rule": "exact",
+   "approximate": false
+  },
+  "WEST MELBOURNE": {
+   "arima": "North Melbourne-West Melbourne",
+   "rule": "component",
+   "approximate": false
+  },
+  "WHITTLESEA": {
+   "arima": "Whittlesea",
+   "rule": "exact",
+   "approximate": false
+  },
+  "WILLIAMSTOWN": {
+   "arima": "Williamstown",
+   "rule": "exact",
+   "approximate": false
+  },
+  "WINDSOR": {
+   "arima": "Prahran-Windsor",
+   "rule": "component",
+   "approximate": false
+  },
+  "WODONGA": {
+   "arima": "Wodonga",
+   "rule": "exact",
+   "approximate": false
+  },
+  "YARRAVILLE": {
+   "arima": "Yarraville-Seddon",
+   "rule": "component",
+   "approximate": false
+  }
+ },
+ "arima_to_listing": {
+  "Albert Park-Middle Park-West St Kilda": [
+   "ALBERT PARK",
+   "MIDDLE PARK",
+   "ST KILDA WEST"
+  ],
+  "Altona": [
+   "ALTONA",
+   "ALTONA MEADOWS",
+   "ALTONA NORTH"
+  ],
+  "Armadale": [
+   "ARMADALE"
+  ],
+  "Aspendale-Chelsea-Carrum": [
+   "ASPENDALE",
+   "CARRUM",
+   "CHELSEA",
+   "CHELSEA HEIGHTS"
+  ],
+  "Bairnsdale": [
+   "BAIRNSDALE"
+  ],
+  "Ballarat": [
+   "BALLARAT NORTH"
+  ],
+  "Balwyn": [
+   "BALWYN",
+   "BALWYN NORTH"
+  ],
+  "Bayswater": [
+   "BAYSWATER",
+   "BAYSWATER NORTH"
+  ],
+  "Belmont-Grovedale": [
+   "BELMONT",
+   "GROVEDALE"
+  ],
+  "Benalla": [
+   "BENALLA"
+  ],
+  "Bendigo": [
+   "BENDIGO"
+  ],
+  "Bentleigh": [
+   "BENTLEIGH",
+   "BENTLEIGH EAST"
+  ],
+  "Berwick": [
+   "BERWICK"
+  ],
+  "Blackburn": [
+   "BLACKBURN",
+   "BLACKBURN NORTH",
+   "BLACKBURN SOUTH"
+  ],
+  "Boronia": [
+   "BORONIA"
+  ],
+  "Box Hill": [
+   "BOX HILL",
+   "BOX HILL NORTH",
+   "BOX HILL SOUTH"
+  ],
+  "Brighton": [
+   "BRIGHTON"
+  ],
+  "Brighton East": [
+   "BRIGHTON EAST"
+  ],
+  "Broadmeadows-Roxburgh Park": [
+   "BROADMEADOWS",
+   "ROXBURGH PARK"
+  ],
+  "Brunswick": [
+   "BRUNSWICK"
+  ],
+  "Bulleen-Templestowe-Doncaster": [
+   "BULLEEN",
+   "DONCASTER",
+   "TEMPLESTOWE",
+   "TEMPLESTOWE LOWER"
+  ],
+  "Bundoora-Greensborough-Hurstbridge": [
+   "BUNDOORA",
+   "GREENSBOROUGH",
+   "HURSTBRIDGE"
+  ],
+  "Burwood-Ashburton": [
+   "ASHBURTON",
+   "BURWOOD"
+  ],
+  "CBD-St Kilda Rd": [
+   "MELBOURNE"
+  ],
+  "Camberwell-Glen Iris": [
+   "CAMBERWELL",
+   "GLEN IRIS"
+  ],
+  "Canterbury-Surrey Hills-Mont Albert": [
+   "CANTERBURY",
+   "MONT ALBERT",
+   "MONT ALBERT NORTH",
+   "SURREY HILLS"
+  ],
+  "Carlton North": [
+   "CARLTON NORTH"
+  ],
+  "Carlton-Parkville": [
+   "CARLTON",
+   "PARKVILLE"
+  ],
+  "Carnegie": [
+   "CARNEGIE"
+  ],
+  "Castlemaine": [
+   "CASTLEMAINE"
+  ],
+  "Caulfield": [
+   "CAULFIELD",
+   "CAULFIELD EAST",
+   "CAULFIELD NORTH",
+   "CAULFIELD SOUTH"
+  ],
+  "Chadstone-Oakleigh": [
+   "CHADSTONE",
+   "OAKLEIGH",
+   "OAKLEIGH EAST",
+   "OAKLEIGH SOUTH"
+  ],
+  "Cheltenham": [
+   "CHELTENHAM"
+  ],
+  "Clayton": [
+   "CLAYTON",
+   "CLAYTON SOUTH"
+  ],
+  "Coburg-Pascoe Vale South": [
+   "COBURG",
+   "PASCOE VALE SOUTH"
+  ],
+  "Collingwood-Abbotsford": [
+   "ABBOTSFORD",
+   "COLLINGWOOD"
+  ],
+  "Corio": [
+   "CORIO"
+  ],
+  "Craigieburn": [
+   "CRAIGIEBURN"
+  ],
+  "Cranbourne": [
+   "CRANBOURNE",
+   "CRANBOURNE NORTH",
+   "CRANBOURNE SOUTH"
+  ],
+  "Croydon-Lilydale": [
+   "CROYDON",
+   "CROYDON NORTH",
+   "CROYDON SOUTH",
+   "LILYDALE"
+  ],
+  "Dandenong": [
+   "DANDENONG",
+   "DANDENONG SOUTH"
+  ],
+  "Dandenong North-Endeavour Hills": [
+   "ENDEAVOUR HILLS"
+  ],
+  "Docklands": [
+   "DOCKLANDS"
+  ],
+  "Doncaster East-Donvale": [
+   "DONCASTER EAST",
+   "DONVALE"
+  ],
+  "Dromana-Portsea": [
+   "DROMANA",
+   "PORTSEA"
+  ],
+  "East Brunswick": [
+   "BRUNSWICK EAST"
+  ],
+  "East Hawthorn": [
+   "HAWTHORN EAST"
+  ],
+  "East Melbourne": [
+   "EAST MELBOURNE"
+  ],
+  "East St Kilda": [
+   "ST KILDA EAST"
+  ],
+  "Echuca": [
+   "ECHUCA"
+  ],
+  "Elsternwick": [
+   "ELSTERNWICK"
+  ],
+  "Eltham-Research-Montmorency": [
+   "ELTHAM",
+   "MONTMORENCY"
+  ],
+  "Elwood": [
+   "ELWOOD"
+  ],
+  "Essendon": [
+   "ESSENDON",
+   "ESSENDON NORTH",
+   "ESSENDON WEST"
+  ],
+  "Fairfield-Alphington": [
+   "ALPHINGTON",
+   "FAIRFIELD"
+  ],
+  "Ferntree Gully": [
+   "FERNTREE GULLY",
+   "UPPER FERNTREE GULLY"
+  ],
+  "Fitzroy": [
+   "FITZROY"
+  ],
+  "Fitzroy North-Clifton Hill": [
+   "CLIFTON HILL",
+   "FITZROY NORTH"
+  ],
+  "Flemington-Kensington": [
+   "FLEMINGTON",
+   "KENSINGTON"
+  ],
+  "Footscray": [
+   "FOOTSCRAY"
+  ],
+  "Frankston": [
+   "FRANKSTON",
+   "FRANKSTON NORTH"
+  ],
+  "Geelong-Newcombe": [
+   "EAST GEELONG",
+   "GEELONG",
+   "NEWCOMB"
+  ],
+  "Gladstone Park-Tullamarine": [
+   "GLADSTONE PARK",
+   "TULLAMARINE"
+  ],
+  "Glen Waverley-Mulgrave": [
+   "GLEN WAVERLEY",
+   "MULGRAVE"
+  ],
+  "Golden Square-Kangaroo Flat": [
+   "GOLDEN SQUARE",
+   "KANGAROO FLAT"
+  ],
+  "Hamilton": [
+   "HAMILTON"
+  ],
+  "Hampton-Beaumaris": [
+   "BEAUMARIS",
+   "HAMPTON",
+   "HAMPTON EAST"
+  ],
+  "Hastings-Flinders": [
+   "FLINDERS",
+   "HASTINGS"
+  ],
+  "Hawthorn": [
+   "HAWTHORN"
+  ],
+  "Heidelberg-Heidelberg West": [
+   "HEIDELBERG",
+   "HEIDELBERG HEIGHTS",
+   "HEIDELBERG WEST"
+  ],
+  "Herne Hill-Geelong West": [
+   "GEELONG WEST",
+   "HERNE HILL"
+  ],
+  "Horsham": [
+   "HORSHAM"
+  ],
+  "Ivanhoe-Ivanhoe East": [
+   "IVANHOE",
+   "IVANHOE EAST"
+  ],
+  "Keilor": [
+   "KEILOR"
+  ],
+  "Keilor East-Avondale Heights": [
+   "AVONDALE HEIGHTS",
+   "KEILOR EAST"
+  ],
+  "Kew": [
+   "KEW",
+   "KEW EAST"
+  ],
+  "Lara": [
+   "LARA"
+  ],
+  "Malvern": [
+   "MALVERN"
+  ],
+  "Malvern East": [
+   "MALVERN EAST"
+  ],
+  "Melton": [
+   "MELTON",
+   "MELTON SOUTH"
+  ],
+  "Mentone-Parkdale-Mordialloc": [
+   "MENTONE",
+   "MORDIALLOC",
+   "PARKDALE"
+  ],
+  "Mill Park-Epping": [
+   "EPPING",
+   "MILL PARK"
+  ],
+  "Moe-Newborough": [
+   "MOE",
+   "NEWBOROUGH"
+  ],
+  "Moonee Ponds-Ascot Vale": [
+   "ASCOT VALE",
+   "MOONEE PONDS"
+  ],
+  "Morwell": [
+   "MORWELL"
+  ],
+  "Mount Clear-Buninyong": [
+   "BUNINYONG",
+   "MOUNT CLEAR"
+  ],
+  "Mount Waverley": [
+   "MOUNT WAVERLEY"
+  ],
+  "Mt Eliza-Mornington-Mt Martha": [
+   "MORNINGTON",
+   "MOUNT ELIZA",
+   "MOUNT MARTHA"
+  ],
+  "Murrumbeena-Hughesdale": [
+   "HUGHESDALE",
+   "MURRUMBEENA"
+  ],
+  "Narre Warren-Hampton Park": [
+   "HAMPTON PARK",
+   "NARRE WARREN",
+   "NARRE WARREN NORTH"
+  ],
+  "Newport-Spotswood": [
+   "NEWPORT",
+   "SPOTSWOOD"
+  ],
+  "Newtown": [
+   "NEWTOWN"
+  ],
+  "Noble Park": [
+   "NOBLE PARK",
+   "NOBLE PARK NORTH"
+  ],
+  "North Bendigo": [
+   "NORTH BENDIGO"
+  ],
+  "North Geelong": [
+   "NORTH GEELONG"
+  ],
+  "North Melbourne-West Melbourne": [
+   "NORTH MELBOURNE",
+   "WEST MELBOURNE"
+  ],
+  "Northcote": [
+   "NORTHCOTE"
+  ],
+  "Nunawading-Mitcham": [
+   "MITCHAM",
+   "NUNAWADING"
+  ],
+  "Oak Park-Glenroy-Fawkner": [
+   "FAWKNER",
+   "GLENROY",
+   "OAK PARK"
+  ],
+  "Ocean Grove-Barwon Heads": [
+   "BARWON HEADS",
+   "OCEAN GROVE"
+  ],
+  "Pakenham": [
+   "PAKENHAM",
+   "PAKENHAM UPPER"
+  ],
+  "Pascoe Vale-Coburg North": [
+   "COBURG NORTH",
+   "PASCOE VALE"
+  ],
+  "Port Melbourne": [
+   "PORT MELBOURNE"
+  ],
+  "Portland": [
+   "PORTLAND"
+  ],
+  "Prahran-Windsor": [
+   "PRAHRAN",
+   "WINDSOR"
+  ],
+  "Preston": [
+   "PRESTON"
+  ],
+  "Reservoir": [
+   "RESERVOIR"
+  ],
+  "Richmond-Burnley": [
+   "BURNLEY",
+   "RICHMOND"
+  ],
+  "Ringwood": [
+   "RINGWOOD",
+   "RINGWOOD EAST",
+   "RINGWOOD NORTH"
+  ],
+  "Rowville": [
+   "ROWVILLE"
+  ],
+  "Sale-Maffra": [
+   "MAFFRA",
+   "SALE"
+  ],
+  "Seaford-Carrum Downs": [
+   "CARRUM DOWNS",
+   "SEAFORD"
+  ],
+  "Sebastopol-Delacombe": [
+   "DELACOMBE",
+   "SEBASTOPOL"
+  ],
+  "Seymour": [
+   "SEYMOUR"
+  ],
+  "Shepparton": [
+   "SHEPPARTON",
+   "SHEPPARTON EAST"
+  ],
+  "South Melbourne": [
+   "SOUTH MELBOURNE"
+  ],
+  "South Yarra": [
+   "SOUTH YARRA"
+  ],
+  "Southbank": [
+   "SOUTHBANK"
+  ],
+  "Springvale": [
+   "SPRINGVALE",
+   "SPRINGVALE SOUTH"
+  ],
+  "St Albans-Deer Park": [
+   "DEER PARK",
+   "ST ALBANS"
+  ],
+  "St Kilda": [
+   "ST KILDA"
+  ],
+  "Sunbury": [
+   "SUNBURY"
+  ],
+  "Sunshine": [
+   "SUNSHINE"
+  ],
+  "Swan Hill": [
+   "SWAN HILL"
+  ],
+  "Sydenham": [
+   "SYDENHAM"
+  ],
+  "Thomastown-Lalor": [
+   "LALOR",
+   "THOMASTOWN"
+  ],
+  "Thornbury": [
+   "THORNBURY"
+  ],
+  "Toorak": [
+   "TOORAK"
+  ],
+  "Torquay": [
+   "TORQUAY"
+  ],
+  "Traralgon": [
+   "TRARALGON"
+  ],
+  "Vermont-Forest Hill-Burwood East": [
+   "BURWOOD EAST",
+   "FOREST HILL",
+   "VERMONT",
+   "VERMONT SOUTH"
+  ],
+  "Wanagaratta": [
+   "WANGARATTA"
+  ],
+  "Wantirna-Scoresby": [
+   "SCORESBY",
+   "WANTIRNA",
+   "WANTIRNA SOUTH"
+  ],
+  "Warragul": [
+   "WARRAGUL"
+  ],
+  "Warrnambool": [
+   "WARRNAMBOOL"
+  ],
+  "Wendouree-Alfredton": [
+   "ALFREDTON",
+   "WENDOUREE"
+  ],
+  "Werribee-Hoppers Crossing": [
+   "HOPPERS CROSSING",
+   "WERRIBEE"
+  ],
+  "West Brunswick": [
+   "BRUNSWICK WEST"
+  ],
+  "West Footscray": [
+   "WEST FOOTSCRAY"
+  ],
+  "Whittlesea": [
+   "WHITTLESEA"
+  ],
+  "Williamstown": [
+   "WILLIAMSTOWN"
+  ],
+  "Wodonga": [
+   "WODONGA"
+  ],
+  "Yarraville-Seddon": [
+   "SEDDON",
+   "YARRAVILLE"
+  ]
+ },
  "stats": {
   "listing_suburbs": 626,
-  "arima_suburbs": 0,
-  "matched": 0,
+  "arima_suburbs": 146,
+  "matched": 249,
   "ambiguous": 0,
-  "unmatched": 626,
-  "unresolved_share": 1.0,
-  "arima_with_listing": 0,
+  "unmatched": 377,
+  "unresolved_share": 0.6022364217252396,
+  "approximate": 43,
+  "by_rule": {
+   "component": 120,
+   "exact": 79,
+   "base_name": 42,
+   "word_order": 4,
+   "override": 1,
+   "fuzzy": 2,
+   "component_word_order": 1
+  },
+  "arima_with_listing": 143,
   "rules": {
    "fuzzy_min": 0.92,
    "fuzzy_gap": 0.04

@@ -73,6 +73,10 @@ class RentService:
         name = m["arima"] if m else None
         return name if name in self.forecasts else None
 
+    def arima_is_approximate(self, listing_suburb: str) -> bool:
+        m = self.crosswalk.get("listing_to_arima", {}).get(listing_suburb)
+        return bool(m and m.get("approximate"))
+
     @property
     def amenities(self) -> list[str]:
         return self.spec.amenities
@@ -94,6 +98,7 @@ class RentService:
                     "carspaces": e["default_carspaces"],
                 },
                 "arima_suburb": arima,
+                "arima_approximate": arima is not None and self.arima_is_approximate(name),
                 "has_forecast": arima is not None,
             })
         m = self.meta["metrics"]
@@ -142,6 +147,7 @@ class RentService:
                 "Very few training listings have this many rooms or car spaces, so the estimate is less reliable."})
 
         arima_name = self.arima_for(listing_suburb) if is_seen else None
+        approx = arima_name is not None and self.arima_is_approximate(listing_suburb)
         projection = at_target = None
         if req.target_date:
             if arima_name is None:
@@ -151,6 +157,10 @@ class RentService:
             else:
                 projection = project(point, lower, upper, self.forecasts[arima_name], req.target_date)
                 at_target = projection[-1]
+                if approx:
+                    warnings.append({"code": "approximate_forecast_area", "message":
+                        f"There is no rent forecast for this exact suburb, so the projection uses the nearby "
+                        f"{arima_name} area's forecast growth."})
                 warnings.append({"code": "combined_band", "message":
                     "The projected range combines the property model's interval with the suburb forecast's 95% "
                     "band. It is a rough guide, not a formal joint interval."})
@@ -166,6 +176,7 @@ class RentService:
                 "listing_suburb": listing_suburb if is_seen else None,
                 "seen_in_training": is_seen,
                 "arima_suburb": arima_name,
+                "arima_approximate": approx,
             },
             "target_date": req.target_date,
             "at_target": at_target,

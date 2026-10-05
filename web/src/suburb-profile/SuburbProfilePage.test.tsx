@@ -53,3 +53,12 @@ it("explains missing forecast and unranked affordability", async () => {
   expect(screen.getByText(/aren't published yet/)).toBeInTheDocument();
   expect(screen.getByText("n/a")).toBeInTheDocument();
 });
+
+it("flags a forecast borrowed from a nearby area", async () => {
+  render(<SuburbProfilePage profilesLoader={pl} forecastsLoader={fl} />);
+  const input = await screen.findByLabelText("Suburb");
+  await userEvent.clear(input);
+  await userEvent.type(input, "Toorak");
+  expect(await screen.findByText(/no forecast for Toorak itself/)).toBeInTheDocument();
+  expect(screen.getByText(/nearby Southbank area/)).toBeInTheDocument();
+});
