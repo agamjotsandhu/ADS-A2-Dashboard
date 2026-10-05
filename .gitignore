@@ -2,7 +2,7 @@
 # Original modelling sources (kept locally, never edited)
 Modelling/
 # Raw / intermediate data (never committed)
-data/
+/data/
 *.parquet
 *.csv
 !web/src/**/fixtures/*.csv
