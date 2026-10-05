@@ -1,0 +1,44 @@
+# --- Not part of the deployed website/API ---
+# Original modelling sources (kept locally, never edited)
+Modelling/
+# Raw / intermediate data (never committed)
+data/
+*.parquet
+*.csv
+!web/src/**/fixtures/*.csv
+# Training intermediates and reports output
+ml/**/cache/
+ml/**/optuna*.db
+ml/**/oof_*.json
+ml/**/*.png
+ml/crosswalk_review.csv
+ml/arima/out/
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.ipynb_checkpoints/
+# R
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+# Node / frontend
+node_modules/
+web/dist/
+*.tsbuildinfo
+coverage/
+test-results/
+playwright-report/
+# Env / secrets / OS
+.env
+.env.*
+!.env.example
+.DS_Store
+.vscode/
+.claude/
