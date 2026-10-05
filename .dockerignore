@@ -1,0 +1,7 @@
+**
+!api/requirements.txt
+!api/rentmodel/**
+!api/app/**
+!ml/xgb/artifacts/**
+!web/public/data/**
+**/__pycache__

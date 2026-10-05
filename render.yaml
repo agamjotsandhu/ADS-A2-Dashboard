@@ -1,0 +1,31 @@
+# Render Blueprint: static site + Dockerised prediction API.
+# Nothing deploys until this is connected in the Render dashboard.
+services:
+  - type: web
+    name: rent-forecast-api
+    runtime: docker
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    plan: starter
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false            # e.g. https://rent-forecast-site.onrender.com
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "30"
+      - key: TRUST_PROXY
+        value: "true"          # Render sits behind a proxy; use X-Forwarded-For for rate limiting
+
+  - type: web
+    name: rent-forecast-site
+    runtime: static
+    rootDir: web
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false            # e.g. https://rent-forecast-api.onrender.com
+    headers:
+      - path: /data/*
+        name: Cache-Control
+        value: public, max-age=3600
