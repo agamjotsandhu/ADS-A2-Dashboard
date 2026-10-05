@@ -6,22 +6,27 @@ import { ChartTooltip, range } from "./ChartTooltip";
 
 const AXIS_TICK = { fill: "var(--muted)", fontSize: 12 };
 
-export function ForecastChart({ data }: { data: SuburbForecast }) {
-  const rows = chartRows(data);
+/** History + forecast, or with ``forecastOnly`` just the forecast quarters and their band. */
+export function ForecastChart({ data, forecastOnly = false }: { data: SuburbForecast; forecastOnly?: boolean }) {
+  const all = chartRows(data);
+  const nHist = data.history.values.length;
+  const rows = forecastOnly ? all.slice(nHist) : all;
   const base = lastHistoryQuarter(data);
-  const ticks = rows.map((r) => r.quarter).filter((q) => q.endsWith("Q1") && Number(q.slice(0, 4)) % 5 === 0);
+  const ticks = rows.map((r) => r.quarter).filter((q) => q.endsWith("Q1") && (forecastOnly || Number(q.slice(0, 4)) % 5 === 0));
 
   return (
     <figure style={{ margin: 0 }}>
       <figcaption className="visually-hidden">
-        Median weekly rent for {data.suburb}: history from {quarterLabel(data.history.start)} to {quarterLabel(base)}, and an
-        ARIMA forecast to {quarterLabel(rows[rows.length - 1].quarter)} with a 95% interval. A data table follows the chart.
+        Median weekly rent for {data.suburb}:{" "}
+        {forecastOnly ? "" : `history from ${quarterLabel(data.history.start)} to ${quarterLabel(base)}, and `}an ARIMA forecast
+        from {quarterLabel(data.forecast.start)} to {quarterLabel(rows[rows.length - 1].quarter)} with a 95% interval. A data
+        table follows the chart.
       </figcaption>
       <div className="legend" aria-hidden="true">
-        <span><i className="key-line" style={{ background: "var(--series-1)" }} />Actual median</span>
+        {!forecastOnly && <span><i className="key-line" style={{ background: "var(--series-1)" }} />Actual median</span>}
         <span><i className="key-line" style={{ background: "var(--series-2)" }} />Forecast</span>
         <span><i className="key-band" style={{ background: "var(--band)" }} />95% interval</span>
-        <span><i className="key-marker" />Forecast start</span>
+        {!forecastOnly && <span><i className="key-marker" />Forecast start</span>}
       </div>
       <div className="chart-wrap">
         <ResponsiveContainer width="100%" height="100%">
@@ -40,7 +45,7 @@ export function ForecastChart({ data }: { data: SuburbForecast }) {
               ].filter(Boolean) as never} />}
             />
             <Area dataKey="band" stroke="none" fill="var(--band)" fillOpacity={1} isAnimationActive={false} activeDot={false} />
-            <ReferenceLine x={base} stroke="var(--muted)" strokeWidth={1} />
+            {!forecastOnly && <ReferenceLine x={base} stroke="var(--muted)" strokeWidth={1} />}
             <Line dataKey="history" stroke="var(--series-1)" strokeWidth={2} dot={false} isAnimationActive={false}
               activeDot={{ r: 4, stroke: "var(--surface)", strokeWidth: 2 }} />
             <Line dataKey="forecast" stroke="var(--series-2)" strokeWidth={2} dot={false} isAnimationActive={false}
@@ -53,12 +58,12 @@ export function ForecastChart({ data }: { data: SuburbForecast }) {
         <div className="table-scroll">
           <table>
             <thead>
-              <tr><th>Quarter</th><th className="num">Forecast</th><th className="num">Lower 95%</th><th className="num">Upper 95%</th></tr>
+              <tr><th>Quarter</th><th className="num">Forecast ($/week)</th><th className="num">Lower 95%</th><th className="num">Upper 95%</th></tr>
             </thead>
             <tbody>
               {data.forecast.mean.map((m, i) => (
                 <tr key={i}>
-                  <td>{quarterLabel(rows[data.history.values.length + i].quarter)}</td>
+                  <td>{quarterLabel(all[nHist + i].quarter)}</td>
                   <td className="num">{fmtDollars(m)}</td>
                   <td className="num">{fmtDollars(data.forecast.lower95[i])}</td>
                   <td className="num">{fmtDollars(data.forecast.upper95[i])}</td>

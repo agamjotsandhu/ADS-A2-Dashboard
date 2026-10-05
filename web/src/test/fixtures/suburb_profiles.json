@@ -1,0 +1,397 @@
+{
+ "meta": {
+  "generated_at": "2026-10-05T03:50:03+00:00",
+  "n_listings": 12316,
+  "listing_dates": [
+   "2012-06-09",
+   "2025-09-09"
+  ],
+  "n_suburbs": 644,
+  "n_affordability_ranked": 377,
+  "min_listings_affordability": 5,
+  "livability_domains": {
+   "Safety": {
+    "columns": [
+     "crime_rate"
+    ],
+    "higher_is_better": false
+   },
+   "Public transport": {
+    "columns": [
+     "train_stations_PTV_road_distance_m",
+     "bus_stops_PTV_road_distance_m"
+    ],
+    "higher_is_better": false
+   },
+   "Schools": {
+    "columns": [
+     "school_primary_road_distance_m",
+     "school_secondary_road_distance_m"
+    ],
+    "higher_is_better": false
+   },
+   "Health care": {
+    "columns": [
+     "medical_doctors_road_distance_m",
+     "hospital_road_distance_m"
+    ],
+    "higher_is_better": false
+   },
+   "Shopping": {
+    "columns": [
+     "shopping_centre_road_distance_m"
+    ],
+    "higher_is_better": false
+   },
+   "Parks": {
+    "columns": [
+     "park_local_road_distance_m"
+    ],
+    "higher_is_better": false
+   },
+   "CBD access": {
+    "columns": [
+     "dist_to_cbd_km_driving"
+    ],
+    "higher_is_better": false
+   }
+  },
+  "dwelling_groups": {
+   "House": [
+    "House",
+    "New House & Land",
+    "Acreage / Semi-Rural",
+    "Farm"
+   ],
+   "Townhouse / semi": [
+    "Townhouse",
+    "Villa",
+    "Duplex",
+    "Terrace",
+    "Semi-Detached"
+   ],
+   "Apartment / unit": [
+    "Apartment / Unit / Flat",
+    "New Apartments / Off the Plan",
+    "Block of Units",
+    "Studio"
+   ]
+  },
+  "arima_matched": 0
+ },
+ "suburbs": {
+  "MELBOURNE": {
+   "name": "MELBOURNE",
+   "display": "Melbourne",
+   "n_listings": 299,
+   "median_rent": 660.0,
+   "median_weekly_income": 1116.0,
+   "population": 22163.0,
+   "dist_to_cbd_km": 5.0,
+   "affordability": {
+    "rent_to_income_pct": 59.1,
+    "rank": 265
+   },
+   "livability": {
+    "score": 71.7,
+    "rank": 61,
+    "domains": {
+     "Safety": 0.0,
+     "Public transport": 88.5,
+     "Schools": 60.6,
+     "Health care": 87.1,
+     "Shopping": 100.0,
+     "Parks": 66.7,
+     "CBD access": 98.8
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 1,
+     "Townhouse / semi": 0,
+     "Apartment / unit": 298
+    },
+    "property_type": {
+     "Apartment / Unit / Flat": 281,
+     "Studio": 17,
+     "House": 1
+    },
+    "bedrooms": {
+     "Studio": 8,
+     "1": 109,
+     "2": 163,
+     "3": 18,
+     "4": 1,
+     "5+": 0
+    },
+    "median_rent_by_bedrooms": {
+     "Studio": 410.0,
+     "1": 550.0,
+     "2": 730.0,
+     "3": 1065.0
+    }
+   },
+   "arima_suburb": null
+  },
+  "TARNEIT": {
+   "name": "TARNEIT",
+   "display": "Tarneit",
+   "n_listings": 298,
+   "median_rent": 532.5,
+   "median_weekly_income": 1088.0,
+   "population": 19169.0,
+   "dist_to_cbd_km": 30.0,
+   "affordability": {
+    "rent_to_income_pct": 48.9,
+    "rank": 130
+   },
+   "livability": {
+    "score": 59.3,
+    "rank": 254,
+    "domains": {
+     "Safety": 72.1,
+     "Public transport": 42.2,
+     "Schools": 50.5,
+     "Health care": 35.0,
+     "Shopping": 61.4,
+     "Parks": 85.7,
+     "CBD access": 68.3
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 287,
+     "Townhouse / semi": 8,
+     "Apartment / unit": 3
+    },
+    "property_type": {
+     "House": 287,
+     "Townhouse": 8,
+     "Apartment / Unit / Flat": 2,
+     "Studio": 1
+    },
+    "bedrooms": {
+     "Studio": 0,
+     "1": 1,
+     "2": 1,
+     "3": 85,
+     "4": 197,
+     "5+": 14
+    },
+    "median_rent_by_bedrooms": {
+     "3": 500.0,
+     "4": 550.0,
+     "5+": 590.0
+    }
+   },
+   "arima_suburb": "Tarneit"
+  },
+  "SOUTHBANK": {
+   "name": "SOUTHBANK",
+   "display": "Southbank",
+   "n_listings": 300,
+   "median_rent": 720.0,
+   "median_weekly_income": 1432.0,
+   "population": 19552.0,
+   "dist_to_cbd_km": 2.7,
+   "affordability": {
+    "rent_to_income_pct": 50.3,
+    "rank": 154
+   },
+   "livability": {
+    "score": 68.9,
+    "rank": 104,
+    "domains": {
+     "Safety": 0.0,
+     "Public transport": 63.5,
+     "Schools": 59.8,
+     "Health care": 67.2,
+     "Shopping": 98.9,
+     "Parks": 93.3,
+     "CBD access": 99.4
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 5,
+     "Townhouse / semi": 0,
+     "Apartment / unit": 295
+    },
+    "property_type": {
+     "Apartment / Unit / Flat": 295,
+     "House": 5
+    },
+    "bedrooms": {
+     "Studio": 4,
+     "1": 104,
+     "2": 163,
+     "3": 28,
+     "4": 0,
+     "5+": 1
+    },
+    "median_rent_by_bedrooms": {
+     "Studio": 627.5,
+     "1": 615.0,
+     "2": 730.0,
+     "3": 1100.0
+    }
+   },
+   "arima_suburb": "Southbank"
+  },
+  "TOORAK": {
+   "name": "TOORAK",
+   "display": "Toorak",
+   "n_listings": 38,
+   "median_rent": 810.0,
+   "median_weekly_income": 1865.0,
+   "population": 13610.0,
+   "dist_to_cbd_km": 7.9,
+   "affordability": {
+    "rent_to_income_pct": 43.4,
+    "rank": 69
+   },
+   "livability": {
+    "score": 69.0,
+    "rank": 101,
+    "domains": {
+     "Safety": 19.1,
+     "Public transport": 86.8,
+     "Schools": 61.4,
+     "Health care": 89.6,
+     "Shopping": 95.5,
+     "Parks": 34.1,
+     "CBD access": 96.4
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 6,
+     "Townhouse / semi": 4,
+     "Apartment / unit": 28
+    },
+    "property_type": {
+     "Apartment / Unit / Flat": 27,
+     "House": 6,
+     "Townhouse": 2,
+     "Duplex": 1,
+     "Villa": 1,
+     "Studio": 1
+    },
+    "bedrooms": {
+     "Studio": 1,
+     "1": 9,
+     "2": 14,
+     "3": 11,
+     "4": 2,
+     "5+": 1
+    },
+    "median_rent_by_bedrooms": {
+     "1": 500.0,
+     "2": 725.0,
+     "3": 1800.0
+    }
+   },
+   "arima_suburb": null
+  },
+  "DOCKLANDS": {
+   "name": "DOCKLANDS",
+   "display": "Docklands",
+   "n_listings": 148,
+   "median_rent": 700.0,
+   "median_weekly_income": 1451.0,
+   "population": 19139.0,
+   "dist_to_cbd_km": 3.9,
+   "affordability": {
+    "rent_to_income_pct": 48.2,
+    "rank": 119
+   },
+   "livability": {
+    "score": 66.8,
+    "rank": 139,
+    "domains": {
+     "Safety": 0.0,
+     "Public transport": 60.3,
+     "Schools": 45.3,
+     "Health care": 72.1,
+     "Shopping": 96.6,
+     "Parks": 93.9,
+     "CBD access": 99.2
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 1,
+     "Townhouse / semi": 5,
+     "Apartment / unit": 142
+    },
+    "property_type": {
+     "Apartment / Unit / Flat": 138,
+     "Townhouse": 5,
+     "Studio": 4,
+     "House": 1
+    },
+    "bedrooms": {
+     "Studio": 3,
+     "1": 72,
+     "2": 58,
+     "3": 12,
+     "4": 2,
+     "5+": 1
+    },
+    "median_rent_by_bedrooms": {
+     "Studio": 550.0,
+     "1": 580.0,
+     "2": 765.0,
+     "3": 1425.0
+    }
+   },
+   "arima_suburb": "Docklands"
+  },
+  "ALLANSFORD": {
+   "name": "ALLANSFORD",
+   "display": "Allansford",
+   "n_listings": 1,
+   "median_rent": 700.0,
+   "median_weekly_income": 932.0,
+   "population": 13590.0,
+   "dist_to_cbd_km": 244.6,
+   "affordability": {
+    "rent_to_income_pct": 75.1,
+    "rank": null
+   },
+   "livability": {
+    "score": 29.6,
+    "rank": 537,
+    "domains": {
+     "Safety": 25.0,
+     "Public transport": 66.7,
+     "Schools": 34.3,
+     "Health care": 25.2,
+     "Shopping": 36.4,
+     "Parks": 7.6,
+     "CBD access": 11.8
+    }
+   },
+   "property_profile": {
+    "dwelling": {
+     "House": 1,
+     "Townhouse / semi": 0,
+     "Apartment / unit": 0
+    },
+    "property_type": {
+     "House": 1
+    },
+    "bedrooms": {
+     "Studio": 0,
+     "1": 0,
+     "2": 0,
+     "3": 0,
+     "4": 1,
+     "5+": 0
+    },
+    "median_rent_by_bedrooms": {}
+   },
+   "arima_suburb": null
+  }
+ }
+}

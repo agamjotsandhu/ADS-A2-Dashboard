@@ -11,7 +11,8 @@ api/                FastAPI service + shared `rentmodel` package (features, spli
 ml/arima/           export_forecasts.R  -> web/public/data/suburb_forecasts.json, suburb_index.json
 ml/xgb/             train_reduced.py, export_summary.py, REPORT.md, artifacts/ (model JSON + metadata, no pickle)
 ml/crosswalk/       build_crosswalk.py  -> ml/xgb/artifacts/suburb_crosswalk.json (+ ml/crosswalk_review.csv)
-web/                Vite + React + TypeScript site (home + /rent-forecast/), Recharts, vitest
+ml/profiles/        build_suburb_profiles.py -> web/public/data/suburb_profiles.json (affordability, livability, property mix)
+web/                Vite + React + TypeScript site (home, /rent-forecast/, /suburb-profile/?suburb=NAME), Recharts, vitest
 render.yaml         Render blueprint (static site + Docker API). Not deployed.
 ```
 
@@ -32,7 +33,7 @@ npm run dev                                       # http://localhost:5173/rent-f
 ### Tests and checks
 
 ```bash
-cd api && .venv/bin/python -m pytest -q          # 42 tests; leakage rebuild test needs data/rentals_final.parquet
+cd api && .venv/bin/python -m pytest -q          # 46 tests; leakage rebuild test needs data/rentals_final.parquet
 cd web && npm run typecheck && npm run lint && npm test
 cd web && API_URL=http://localhost:8000 npm run smoke   # e2e smoke against a running API
 ```
@@ -60,7 +61,8 @@ Run from the repo root, in this order:
 2. **Crosswalk:** `python3 ml/crosswalk/build_crosswalk.py`. Read the printed stats. If more than 10% of suburbs are unresolved, review `ml/crosswalk_review.csv`.
 3. **XGBoost:** `pip install -r ml/requirements.txt`, then `python3 ml/xgb/train_reduced.py --data data/rentals_final.parquet`. This takes about 10 minutes and evaluates the test set once. Use `--skip-test` for dry runs and `--report-only` to re-render `REPORT.md` from `meta.json`. Rebuild the crosswalk afterwards, since it uses the new lookup.
 4. **Publish metrics:** `python3 ml/xgb/export_summary.py`, which writes `web/public/data/model_summary.json` for the methodology panel.
-5. Run the tests above, commit, then redeploy the API image and the static site.
+5. **Suburb profiles:** `python3 ml/profiles/build_suburb_profiles.py`. Re-run it after every ARIMA export, because it stores each suburb's matched forecast area.
+6. Run the tests above, commit, then redeploy the API image and the static site.
 
 ### When new quarterly data arrives (ABS / DFFH)
 
@@ -81,6 +83,14 @@ The pipeline is anchored to 2025Q3 as "now". To roll it forward by a quarter, up
 - **Combined projection band:** it multiplies the property interval by the suburb forecast interval. It is a heuristic, not a joint prediction interval.
 - **Unseen suburbs:** they fall back to Victoria-wide medians. Coverage was poor on the 18 such test rows.
 - **Rate limiting is in memory and per process.** Use a shared store if the API is scaled to several instances.
+
+## Suburb profile page: definitions
+
+- **Affordability:** median asking rent / median weekly income (source column `median_weekly_income`). Lower is more affordable. Only suburbs with 5+ listings are ranked, because the median rent of 1–4 listings is noise. It is relative to local incomes, so high-income suburbs (e.g. Toorak) can rank as affordable.
+- **Livability:** the equal-weight mean of seven domain scores (safety, public transport, schools, health care, shopping, parks, CBD access). Each score is the percentile of the suburb's median value among all suburbs. Weights and columns live in `LIVABILITY_DOMAINS` in `ml/profiles/build_suburb_profiles.py`.
+- **Property profile:** shares of *rental listings* by dwelling group and bedrooms, not of the housing stock.
+- **Forecast growth rank:** the matched ARIMA area's Sep 2031 / Sep 2026 forecast, ranked across all areas. It stays empty until the ARIMA export has run.
+- Profiles use all listings, including the model's test period. They're descriptive and don't feed the rent model.
 
 ## Decisions and deviations from the brief
 

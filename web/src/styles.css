@@ -123,17 +123,28 @@ main,
 }
 .site-header .inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  height: 56px;
+  gap: 4px 16px;
+  min-height: 56px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.brand {
+  white-space: nowrap;
 }
 .brand {
   font-weight: 650;
   color: var(--ink);
   text-decoration: none;
 }
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
 .site-header nav a {
-  margin-left: 16px;
   white-space: nowrap;
   color: var(--ink-2);
   text-decoration: none;

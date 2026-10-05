@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export function Layout({ current, children }: { current: "home" | "rent-forecast"; children: ReactNode }) {
+export function Layout({ current, children }: { current: "home" | "rent-forecast" | "suburb-profile"; children: ReactNode }) {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
@@ -10,6 +10,7 @@ export function Layout({ current, children }: { current: "home" | "rent-forecast
           <nav aria-label="Main">
             <a href="/" aria-current={current === "home" ? "page" : undefined}>Home</a>
             <a href="/rent-forecast/" aria-current={current === "rent-forecast" ? "page" : undefined}>Rent forecast</a>
+            <a href="/suburb-profile/" aria-current={current === "suburb-profile" ? "page" : undefined}>Suburb profiles</a>
           </nav>
         </div>
       </header>

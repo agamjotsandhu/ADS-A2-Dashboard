@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         home: fileURLToPath(new URL("index.html", import.meta.url)),
         rentForecast: fileURLToPath(new URL("rent-forecast/index.html", import.meta.url)),
+        suburbProfile: fileURLToPath(new URL("suburb-profile/index.html", import.meta.url)),
       },
     },
   },

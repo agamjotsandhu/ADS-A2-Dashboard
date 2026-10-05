@@ -13,6 +13,11 @@ createRoot(document.getElementById("root")!).render(
         <p className="subtle">Suburb median rent forecasts to 2031 and a property rent estimator with prediction intervals.</p>
         <a className="btn" href="/rent-forecast/" style={{ display: "inline-block", textDecoration: "none" }}>Open rent forecast</a>
       </div>
+      <div className="card">
+        <h2>Suburb profiles</h2>
+        <p className="subtle">Rent forecast, affordability and livability rankings, and the rental property mix for any suburb.</p>
+        <a className="btn" href="/suburb-profile/" style={{ display: "inline-block", textDecoration: "none" }}>Open suburb profiles</a>
+      </div>
     </Layout>
   </StrictMode>,
 );
