@@ -1,0 +1,17 @@
+{
+ "listing_to_arima": {},
+ "arima_to_listing": {},
+ "stats": {
+  "listing_suburbs": 626,
+  "arima_suburbs": 0,
+  "matched": 0,
+  "ambiguous": 0,
+  "unmatched": 626,
+  "unresolved_share": 1.0,
+  "arima_with_listing": 0,
+  "rules": {
+   "fuzzy_min": 0.92,
+   "fuzzy_gap": 0.04
+  }
+ }
+}

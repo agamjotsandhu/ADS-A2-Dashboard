@@ -1,0 +1,6 @@
+# Training dependencies (in addition to api/requirements.txt)
+-r ../api/requirements.txt
+scikit-learn==1.5.1
+optuna==5.0.0
+shap==0.46.0
+pyarrow>=14
